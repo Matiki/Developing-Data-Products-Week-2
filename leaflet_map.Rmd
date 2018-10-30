@@ -1,0 +1,33 @@
+---
+title: "Making a Map With Leaflet"
+author: "Matiki"
+date: "October 29, 2018"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(leaflet)
+library(dplyr)
+```
+
+First we load the required libraries.
+```{r, eval = FALSE}
+library(leaflet)
+library(dplyr)
+```
+
+Next we create the map object with the leaflet(), addTiles(), and addMarkers() 
+functions. We'll set the latitude and longitude to Rosario, Argentina, the 
+birthplace of the world's greatest soccer player: Lionel Messi.
+
+```{r}
+map <- leaflet() %>%
+        addTiles() %>%
+        addMarkers(lat = -32.9442, 
+                   lng = -60.6505, 
+                   popup = "Rosario, Argentina")
+map
+```
